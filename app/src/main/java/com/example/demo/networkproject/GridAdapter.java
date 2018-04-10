@@ -28,8 +28,6 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.Holder> {
         this.context = context;
         this.mViewType = viewtype;
         this.list = list;
-//        test
-
     }
 
     @Override

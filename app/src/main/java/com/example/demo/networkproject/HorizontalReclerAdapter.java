@@ -1,6 +1,8 @@
 package com.example.demo.networkproject;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Paint;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -71,7 +73,6 @@ public class HorizontalReclerAdapter extends RecyclerView.Adapter<HorizontalRecl
             PopularCategory popularCategory = (PopularCategory) list.get(0);
             Glide.with(context).load(popularCategory.getImage()).into(holder.product_image);
             holder.product_title.setText(popularCategory.getTitle());
-
         } else if (viewtype == HomeAdapter.ViewHandler.all_category) {
 
             AllCategory allCategory = (AllCategory) list.get(0);

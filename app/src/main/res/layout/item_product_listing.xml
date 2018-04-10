@@ -10,9 +10,11 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/product_image"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_80sdp"
             android:layout_margin="@dimen/_10sdp"
+            android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher" />
 
         <LinearLayout
@@ -23,6 +25,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/product_name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="text"
@@ -31,29 +34,45 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/company_name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:drawableLeft="@drawable/location_gray_icon"
+                android:singleLine="true"
                 android:text="text"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp" />
 
             <TextView
+                android:id="@+id/address_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:drawableLeft="@drawable/location_gray_icon"
+                android:singleLine="true"
                 android:text="text"
                 android:textColor="#A8A8A8"
                 android:textSize="@dimen/_14sdp" />
 
+            <TextView
+                android:id="@+id/price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:singleLine="true"
+                android:text="₹ 200/item"
+                android:textColor="@color/blue_color"
+                android:textSize="@dimen/_12sdp" />
+
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/like_image"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_margin="@dimen/_10sdp"
+            android:padding="@dimen/_2sdp"
             android:src="@drawable/like_icon" />
 
     </LinearLayout>
@@ -66,8 +85,10 @@
         android:padding="@dimen/_5sdp">
 
         <TextView
+            android:id="@+id/get_quotes_tv"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_5sdp"
             android:layout_weight="0.5"
             android:background="@color/color_red"
@@ -77,15 +98,16 @@
             android:textSize="@dimen/_15sdp" />
 
         <TextView
+            android:id="@+id/view_detail_tv"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:layout_weight="0.5"
-            android:background="#080330"
+            android:background="#002335"
             android:gravity="center"
             android:text="View Detail"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp" />
-
 
     </LinearLayout>
 

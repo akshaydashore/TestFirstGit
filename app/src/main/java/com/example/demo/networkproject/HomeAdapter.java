@@ -1,6 +1,7 @@
 package com.example.demo.networkproject;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -48,6 +49,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Holder> {
             HorizontalReclerAdapter horizontalReclerAdapter = new HorizontalReclerAdapter(context, ViewHandler.popular_product, new ArrayList(homeBean.getData().getPopularProduct()));
             holder.recyclerView.setAdapter(horizontalReclerAdapter);
             holder.category_title.setText("Popular Product");
+            holder.category_title.setPaintFlags(holder.category_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         } else if (getItemViewType(position) == ViewHandler.popular_service) {
 
@@ -128,7 +130,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Holder> {
                 LinearLayoutManager manager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
                 recyclerView.setLayoutManager(manager);
             }
-
         }
     }
 

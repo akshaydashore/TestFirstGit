@@ -1,5 +1,6 @@
 package com.example.demo.networkproject;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Task task = new Task();
         task.execute();
         initView();
+
     }
 
     private void initView() {
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 while ((l = reader.readLine()) != null) {
                     builder.append(l);
                 }
+
                 return builder.toString();
 
             } catch (MalformedURLException e) {
