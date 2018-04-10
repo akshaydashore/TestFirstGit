@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NetworkProject</string>
+    <string name="view_all"><![CDATA[view all <>]]></string>
+    <string name="refer_earn"><![CDATA[Refer & Earn]]></string>
+</resources>
