@@ -7,4 +7,8 @@
     <color name="white">#ffffff</color>
     <color name="color_red">#e65540</color>
     <color name="blue_color">#021ffd</color>
+    <color name="green">#04ed0c</color>
+    <color name="yellow">#fda602</color>
+    <color name="dark_blue">#355277</color>
+    <color name="blue_color_new">#171949</color>
 </resources>

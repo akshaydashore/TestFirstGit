@@ -68,7 +68,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Holder> {
             GridAdapter horizontalReclerAdapter = new GridAdapter(context, ViewHandler.all_category, new ArrayList(homeBean.getData().getAllCategory()));
             holder.recyclerView.setAdapter(horizontalReclerAdapter);
             holder.category_title.setText("All Category");
-
         }
 
     }
@@ -78,6 +77,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Holder> {
     public int getItemCount() {
         return ViewHandler.total_view_count;
     }
+
 
     @Override
     public int getItemViewType(int position) {
@@ -103,6 +103,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Holder> {
         }
 
         return super.getItemViewType(position);
+
     }
 
 

@@ -1,6 +1,5 @@
 package com.example.demo.networkproject;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.demo.networkproject.bean.HomeBean;
+import com.example.demo.networkproject.test.MainActivityContract;
+import com.example.demo.networkproject.test.MainActivityRepresenter;
+import com.example.demo.networkproject.test.TemperatureData;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -19,7 +21,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity {
+//https://www.journaldev.com/15571/android-notification-direct-reply
+public class MainActivity extends AppCompatActivity implements MainActivityContract.View{
 
     private HomeBean homeBean;
     private RecyclerView recycler_view;
@@ -27,12 +30,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         context = this;
-        setContentView(R.layout.activity_main);
+      setContentView(R.layout.contact_layout);
         Task task = new Task();
-        task.execute();
-        initView();
+//      task.execute();
+//      initView();
+//        TemperatureData temperatureData = new TemperatureData("Indore", "33.5", "nodata");
+//        // your data is created here
+//        DataBindingLayoutBinding binding = DataBindingUtil.setContentView(this, R.layout.data_binding_layout);
+//        binding.setTemp(temperatureData); // generated setter based on the data in the layout file
+//
+//        MainActivityRepresenter mainActivityRepresenter  = new MainActivityRepresenter(this,this);
+//        binding.setPresenter(mainActivityRepresenter);
 
     }
 
@@ -41,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         recycler_view = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(context);
         recycler_view.setLayoutManager(manager);
+
     }
 
     private void setAdapter() {
@@ -49,8 +61,15 @@ public class MainActivity extends AppCompatActivity {
         recycler_view.setAdapter(homeAdapter);
     }
 
+    @Override
+    public void showData(TemperatureData temperatureData) {
+
+        Log.e( "showData: ",">>"+temperatureData.getLocation() );
+    }
+
 
     class Task extends AsyncTask<Void, Void, String> {
+
 
         @Override
         protected String doInBackground(Void... voids) {
